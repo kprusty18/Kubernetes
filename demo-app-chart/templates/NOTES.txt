@@ -1,0 +1,14 @@
+1. The chart deploys:
+   - Deployment: {{ .Release.Name }}-backend
+   - Service: {{ .Release.Name }}-backend
+   - Deployment: {{ .Release.Name }}-frontend
+   - Service: {{ .Release.Name }}-frontend
+
+2. To check pods:
+   kubectl get pods
+
+3. To check services:
+   kubectl get svc
+
+4. To port-forward the frontend:
+   kubectl port-forward service/{{ .Release.Name }}-frontend 8080:{{ .Values.frontend.service.targetPort }}

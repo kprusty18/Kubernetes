@@ -1,0 +1,21 @@
+# Minimal values for demo-app-chart
+backend:
+  replicaCount: 1
+  image:
+    repository: kiran338/kubernetes-backend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 3000
+    targetPort: 3000
+frontend:
+  replicaCount: 1
+  image:
+    repository: kiran338/kubernetes-frontend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+    targetPort: 80
